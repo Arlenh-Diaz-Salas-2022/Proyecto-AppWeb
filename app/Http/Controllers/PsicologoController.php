@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use App\Models\psicologo;
 
-class UsurioController extends Controller
+class PsicologoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class UsurioController extends Controller
      */
     public function index()
     {
-
-        $usuarios = Usuario::all();
-        return view('user.index')->with('usuarios',$usuarios);
+        $psicologos = psicologo::all();
+        return view('psicologo.index')->with('psicologos',$psicologos);
     }
 
     /**
@@ -26,7 +25,7 @@ class UsurioController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('psicologo.create');
     }
 
     /**
@@ -37,17 +36,16 @@ class UsurioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuarios = new Usuario();
-        $usuarios -> id = $request -> get('id');
-        $usuarios -> nombres = $request -> get('nombres');
-        $usuarios -> apellidos = $request -> get('apellidos');
-        $usuarios -> edad = $request -> get('edad');
-        $usuarios -> fechana = $request -> get('fechana');
-        $usuarios -> carrera = $request -> get('carrera');
-        $usuarios -> rol = $request -> get('rol');
-        $usuarios -> save();
+        $psicologos = new psicologo();
+        $psicologos -> id = $request -> get('id');
+        $psicologos -> nombres = $request -> get('nombres');
+        $psicologos -> apellidos = $request -> get('apellidos');
+        $psicologos -> telefono = $request -> get('telefono');
+        $psicologos -> edad = $request -> get('edad');
+        $psicologos -> fechana = $request -> get('fechana');
+        $psicologos -> save();
 
-        return redirect('/usuarios');
+        return redirect('/psicologos');
     }
 
     /**
@@ -69,8 +67,8 @@ class UsurioController extends Controller
      */
     public function edit($id)
     {
-        $usuario = Usuario::find($id);
-        return view('user.edit')->with('usuario',$usuario);
+        $psicologo = psicologo::find($id);
+        return view('psicologo.edit')->with('psicologo',$psicologo);
     }
 
     /**
@@ -82,17 +80,16 @@ class UsurioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usuario=Usuario::find($id);
-        $usuario -> id = $request -> get('id');
-        $usuario -> nombres = $request -> get('nombres');
-        $usuario -> apellidos = $request -> get('apellidos');
-        $usuario -> edad = $request -> get('edad');
-        $usuario -> fechana = $request -> get('fechana');
-        $usuario -> carrera = $request -> get('carrera');
-        $usuario -> rol = $request -> get('rol');
-        $usuario -> save();
+        $psicologos  = psicologo::find($id);
+        $psicologos -> id = $request -> get('id');
+        $psicologos -> nombres = $request -> get('nombres');
+        $psicologos -> apellidos = $request -> get('apellidos');
+        $psicologos -> telefono = $request -> get('telefono');
+        $psicologos -> edad = $request -> get('edad');
+        $psicologos -> fechana = $request -> get('fechana');
+        $psicologos -> save();
 
-        return redirect('/usuarios');
+        return redirect('/psicologos');
     }
 
     /**
@@ -103,9 +100,8 @@ class UsurioController extends Controller
      */
     public function destroy($id)
     {
-        $usuario=Usuario::find($id);
-        $usuario -> delete();
-        return redirect('/usuarios');
-
+        $psicologo=psicologo::find($id);
+        $psicologo -> delete();
+        return redirect('/psicologos');
     }
 }

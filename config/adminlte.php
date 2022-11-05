@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -323,42 +323,9 @@ return [
             'label_color' => '',
         ],
         [
-            'text'    => 'Citas',
-            'icon'    => 'fas fa-fw fa-calendar',
-            'submenu' => [
-                [
-                    'text'        => 'Crear',
-                    'url'         => '#',
-                    'icon'        => 'fas fa-fw fa-plus',
-                    /* 'label'       => '', */
-                    'label_color' => 'danger',
-                ],
-                [
-                    'text' => 'Eliminar',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-trash',
-                ],
-                [
-                    'text' => 'Editar',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-pen-square',
-                ],
-                [
-                    'text' => 'Buscar',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-search',
-                ],
-                [
-                    'text' => 'Historial',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-clock',
-                ],
-                [
-                    'text' => 'Citas',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-calendar',
-                ],
-            ],
+            'text'    => 'Psicologos',
+            'url'         => '/psicologos',
+            'icon'    => 'fas fa-fw fa-brain'
         ],
 
         /*  [

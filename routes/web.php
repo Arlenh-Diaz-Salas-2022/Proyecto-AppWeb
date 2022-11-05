@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('usuarios', 'App\Http\Controllers\UsurioController');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,3 +26,19 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function(){
+    Route::resource('usuarios', 'App\Http\Controllers\UsurioController');
+    Route::resource('psicologos', 'App\Http\Controllers\PsicologoController');
+});
+/* Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function(){
+
+}); */
+
