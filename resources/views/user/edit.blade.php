@@ -12,7 +12,7 @@
     @method('PUT')
 <div class="mb-3">
         <label for="" class="form-label"></label>
-        <input type="number" class="form-control" id="id" name="id" placeholder="Numero de identificación" value="{{$usuario->id}}" required>
+        <input type="number" class="form-control" id="id" name="id" placeholder="Numero de identificación" value="{{$usuario->num_identificacion}}" required>
             <div class="valid-feedback">Campo Listo!</div>
             <div class="invalid-feedback">Campo Requerido*</div>
     </div>

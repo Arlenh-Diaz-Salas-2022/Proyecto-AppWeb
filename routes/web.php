@@ -33,6 +33,7 @@ Route::middleware([
 ])->group(function(){
     Route::resource('usuarios', 'App\Http\Controllers\UsurioController');
     Route::resource('psicologos', 'App\Http\Controllers\PsicologoController');
+    Route::resource('citas', 'App\Http\Controllers\CitaController');
 });
 /* Route::middleware([
     'auth:sanctum',

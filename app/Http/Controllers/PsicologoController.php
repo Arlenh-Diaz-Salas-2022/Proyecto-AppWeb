@@ -37,7 +37,7 @@ class PsicologoController extends Controller
     public function store(Request $request)
     {
         $psicologos = new psicologo();
-        $psicologos -> id = $request -> get('id');
+        $psicologos -> num_identificacion = $request -> get('num_identificacion');
         $psicologos -> nombres = $request -> get('nombres');
         $psicologos -> apellidos = $request -> get('apellidos');
         $psicologos -> telefono = $request -> get('telefono');
@@ -81,7 +81,7 @@ class PsicologoController extends Controller
     public function update(Request $request, $id)
     {
         $psicologos  = psicologo::find($id);
-        $psicologos -> id = $request -> get('id');
+        $psicologos -> num_identificacion = $request -> get('num_identificacion');
         $psicologos -> nombres = $request -> get('nombres');
         $psicologos -> apellidos = $request -> get('apellidos');
         $psicologos -> telefono = $request -> get('telefono');

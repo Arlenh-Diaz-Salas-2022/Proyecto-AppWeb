@@ -11,7 +11,7 @@
     @csrf
 <div class="mb-3">
         <label for="" class="form-label"></label>
-        <input type="number" class="form-control" id="id" name="id" placeholder="Numero de identificación" required>
+        <input type="number" class="form-control" id="num_identificacion" name="num_identificacion" placeholder="Numero de identificación" required>
             <div class="valid-feedback">Campo Listo!</div>
             <div class="invalid-feedback">Campo Requerido*</div>
 </div>

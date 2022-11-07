@@ -327,7 +327,11 @@ return [
             'url'         => '/psicologos',
             'icon'    => 'fas fa-fw fa-brain'
         ],
-
+        [
+            'text'    => 'Citas',
+            'url'         => '/citas',
+            'icon'    => 'fas fa-fw fa-calendar'
+        ],
         /*  [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',

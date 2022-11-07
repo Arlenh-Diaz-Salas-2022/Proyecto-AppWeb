@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
-
 class UsurioController extends Controller
 {
     /**
@@ -12,11 +11,17 @@ class UsurioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /* public function cita(){
+        $citas = Usuario::all();
+        return view('cita.index')->with('citas',$citas);
+    } */
     public function index()
     {
 
         $usuarios = Usuario::all();
         return view('user.index')->with('usuarios',$usuarios);
+
+
     }
 
     /**
@@ -38,14 +43,23 @@ class UsurioController extends Controller
     public function store(Request $request)
     {
         $usuarios = new Usuario();
-        $usuarios -> id = $request -> get('id');
+
+        $usuarios -> num_identificacion = $request -> get('num_identificacion');
+
         $usuarios -> nombres = $request -> get('nombres');
+
         $usuarios -> apellidos = $request -> get('apellidos');
+
         $usuarios -> edad = $request -> get('edad');
+
         $usuarios -> fechana = $request -> get('fechana');
+
         $usuarios -> carrera = $request -> get('carrera');
+
         $usuarios -> rol = $request -> get('rol');
+
         $usuarios -> save();
+
 
         return redirect('/usuarios');
     }
@@ -83,7 +97,7 @@ class UsurioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario=Usuario::find($id);
-        $usuario -> id = $request -> get('id');
+        $usuario -> num_identificacion = $request -> get('num_identificacion');
         $usuario -> nombres = $request -> get('nombres');
         $usuario -> apellidos = $request -> get('apellidos');
         $usuario -> edad = $request -> get('edad');

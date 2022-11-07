@@ -13,14 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('psicologos', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->String('num_identificacion');
+            $table->integer('num_identificacion');
             $table->String('nombres',40);
             $table->String('apellidos',40);
-            $table->integer('telefono');
+            $table->String('rol');
             $table->integer('edad');
-            $table->date('fechana');
+            $table->String('tipo_atencion');
+            $table->string('profecinal');
+            $table->String('dia_disponible');
+            $table->String('hora_disponible');
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('psicologos');
+        Schema::dropIfExists('citas');
     }
 };

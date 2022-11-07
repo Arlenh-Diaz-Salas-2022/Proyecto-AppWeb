@@ -28,7 +28,7 @@
             <tbody>
                 @foreach($psicologos as $psicologo)
                     <tr>
-                        <td>{{$psicologo->id}}</td>
+                        <td>{{$psicologo->num_identificacion}}</td>
                         <td>{{$psicologo->nombres}}</td>
                         <td>{{$psicologo->apellidos}}</td>
                         <td>{{$psicologo->telefono}}</td>

@@ -29,7 +29,7 @@
             <tbody>
                 @foreach($usuarios as $usuario)
                     <tr>
-                        <td>{{$usuario->id}}</td>
+                        <td>{{$usuario->num_identificacion}}</td>
                         <td>{{$usuario->nombres}}</td>
                         <td>{{$usuario->apellidos}}</td>
                         <td>{{$usuario->edad}}</td>
