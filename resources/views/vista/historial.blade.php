@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Citas')
+@section('title', 'historial')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -9,8 +9,8 @@
 @section('contenido')
 <div class="container">
       <div class="table_header">
-        <h2>Citas</h2>
-        <a href="/historial" class="btn btn-primary" style=" box-shadow: 8px 8px 5px 0px rgba(219, 219, 219, 0.7490196078);" >Historial</a>
+        <h2>Historial</h2>
+
       </div>
     <div class="table-responsive">
         <table class="table  table-striped table-hover">
@@ -19,27 +19,31 @@
                     <th scope="col">Identificación</th>
                     <th scope="col">Nombres</th>
                     <th scope="col">Apellidos</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Fecha de nacimiento</th>
-                    <th scope="col">Carrera</th>
                     <th scope="col">Rol</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Tipo de atención</th>
+                    <th scope="col">Profesional</th>
+                    <th scope="col">Dia disponible</th>
+                    <th class="col">Hora disponible</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($usuarios as $usuario)
+                @foreach($historial as $historials )
                     <tr>
-                        <td>{{$usuario->id}}</td>
-                        <td>{{$usuario->nombres}}</td>
-                        <td>{{$usuario->apellidos}}</td>
-                        <td>{{$usuario->edad}}</td>
-                        <td>{{$usuario->fechana}}</td>
-                        <td>{{$usuario->carrera}}</td>
-                        <td>{{$usuario->rol}}</td>
+                        <td>{{$historials->num_identificacion}}</td>
+                        <td>{{$historials->nombres}}</td>
+                        <td>{{$historials->apellidos}}</td>
+                        <td>{{$historials->rol}}</td>
+                        <td>{{$historials->edad}}</td>
+                        <td>{{$historials->tipo_atencion}}</td>
+                        <td>{{$historials->profecinal}}</td>
+                        <td>{{$historials->dia_disponible}}</td>
+                        <td>{{$historials->hora_disponible}}</td>
                         <td>
-                            <form action="{{ route('citas.destroy',$usuario->id) }}" method="POST">
+                            <form action="{{ route('historial.destroy',$historials->id) }}" method="POST">
                                 @csrf
-                                <a href="/citas/{{ $usuario->id }}/edit" class="btn btn-success" >Crear cita</a>
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" >Borrar</button>
                             </form>
                         </td>
                     </tr>

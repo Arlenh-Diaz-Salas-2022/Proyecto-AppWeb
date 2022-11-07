@@ -14,12 +14,14 @@ class CitaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $psicologos = psicologo::all();
         $usuarios = Usuario::all();
         return view('cita.index')->with('usuarios',$usuarios);
         return view('cita.index')->with('psicologos',$psicologos);
+
     }
 
 
@@ -31,7 +33,7 @@ class CitaController extends Controller
     public function create()
     {
         return view('cita.edit');
-        
+
 
     }
 

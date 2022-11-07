@@ -34,6 +34,7 @@ Route::middleware([
     Route::resource('usuarios', 'App\Http\Controllers\UsurioController');
     Route::resource('psicologos', 'App\Http\Controllers\PsicologoController');
     Route::resource('citas', 'App\Http\Controllers\CitaController');
+    Route::resource('historial', 'App\Http\Controllers\VistaController');
 });
 /* Route::middleware([
     'auth:sanctum',

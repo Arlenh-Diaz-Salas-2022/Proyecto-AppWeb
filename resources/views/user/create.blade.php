@@ -32,7 +32,7 @@
     <div class="row g-3 mb-3">
         <div class="col">
 
-            <input type="text" class="form-control" id="edad" name="edad" placeholder="Edad de nacimiento" required>
+            <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" required>
             <div class="valid-feedback">Campo Listo!</div>
             <div class="invalid-feedback">Campo Requerido*</div>
         </div>
