@@ -11,9 +11,9 @@
     @csrf
 <div class="mb-3">
         <label for="" class="form-label"></label>
-        <input type="number" class="form-control" id="num_identificacion" name="num_identificacion" placeholder="Numero de identificación" required>
+        <input type="number" class="form-control" id="num_identificacion" name="num_identificacion" min="0" placeholder="Numero de identificación" required>
         <div class="valid-feedback">Campo Listo!</div>
-        <div class="invalid-feedback">Campo Requerido*</div>
+        <div class="invalid-feedback">Campo Requerido* (No acepta numeros negativos)</div>
     </div>
     <div class="row g-3 mb-3">
         <div class="col">
@@ -32,9 +32,9 @@
     <div class="row g-3 mb-3">
         <div class="col">
 
-            <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" required>
+            <input type="number" class="form-control" id="edad" name="edad" min="0" placeholder="Edad" required>
             <div class="valid-feedback">Campo Listo!</div>
-            <div class="invalid-feedback">Campo Requerido*</div>
+            <div class="invalid-feedback">Campo Requerido* (No acepta numeros negativos)</div>
         </div>
         <div class="col">
 

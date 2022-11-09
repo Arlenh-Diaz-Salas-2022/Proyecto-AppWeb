@@ -11,9 +11,9 @@
     @csrf
 <div class="mb-3">
         <label for="" class="form-label"></label>
-        <input type="number" class="form-control" id="num_identificacion" name="num_identificacion" placeholder="Numero de identificación" required>
+        <input type="number" class="form-control" id="num_identificacion" name="num_identificacion" min="0" placeholder="Numero de identificación" required>
             <div class="valid-feedback">Campo Listo!</div>
-            <div class="invalid-feedback">Campo Requerido*</div>
+            <div class="invalid-feedback">Campo Requerido* (No acepta numeros negativos)</div>
 </div>
     <div class="row g-3 mb-3">
         <div class="col">
@@ -28,17 +28,17 @@
                 <div class="invalid-feedback">Campo Requerido*</div>
         </div>
         <div class="col">
-            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Numero de telefono" required>
+            <input type="number" class="form-control" id="telefono" name="telefono" min="1000000000" max="9999999999" placeholder="Numero de telefono" required>
                 <div class="valid-feedback">Campo Listo!</div>
-                <div class="invalid-feedback">Campo Requerido*</div>
+                <div class="invalid-feedback">Campo Requerido (10 caracteres)*</div>
         </div>
     </div>
 
     <div class="row g-3 mb-3">
         <div class="col">
-            <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" required>
+            <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" min="0" required>
                 <div class="valid-feedback">Campo Listo!</div>
-                <div class="invalid-feedback">Campo Requerido*</div>
+                <div class="invalid-feedback">Campo Requerido* (No acepta numeros negativos)</div>
         </div>
         <div class="col">
 
