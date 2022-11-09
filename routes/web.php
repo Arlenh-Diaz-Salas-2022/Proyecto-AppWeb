@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
@@ -36,6 +37,8 @@ Route::middleware([
     Route::resource('citas', 'App\Http\Controllers\CitaController');
     Route::resource('historial', 'App\Http\Controllers\VistaController');
 });
+Route::get('contactanos', [ContactanosController::class,'__invoke'])->name('contactanos.index');
+Route::post('contactanos',[ContactanosController::class,'store'])->name('contactanos.store');
 /* Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

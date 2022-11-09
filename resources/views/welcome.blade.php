@@ -14,10 +14,10 @@
     <div class="container-fluid">
         <div class="row ">
             <div class="col" id="boton" name="boton">
-                <a type="button" class="btn btn-danger" href="/login"><i class="fa-solid fa-user-tie"></i> Administrador</a>
+                <a type="button" class="btn btn-danger" href="/login"><i class="fa-solid fa-user-tie"></i> Iniciar sesion</a>
             </div>
             <div class="col" id="boton">
-                <a type="button" class="btn btn-success"><i class="fa-regular fa-user"></i> Usuario</a>
+                <a type="button" class="btn btn-success" href="{{route('contactanos.index')}}"><i class="fa-brands fa-readme"></i> Contactanos</a>
             </div>
         </div>
     </div>
