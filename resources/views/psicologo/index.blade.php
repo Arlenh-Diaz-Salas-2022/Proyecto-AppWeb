@@ -32,8 +32,8 @@
                         <td>{{$psicologo->nombres}}</td>
                         <td>{{$psicologo->apellidos}}</td>
                         <td>{{$psicologo->telefono}}</td>
-                        <td>{{$psicologo->fechana}}</td>
                         <td>{{$psicologo->edad}}</td>
+                        <td>{{$psicologo->fechana}}</td>
                         <td>
                             <form action="{{ route('psicologos.destroy',$psicologo->id) }}" method="POST" class="formulario-eliminar">
                                 <a href="/psicologos/{{ $psicologo->id }}/edit" class="btn btn-success" >Editar</a>
