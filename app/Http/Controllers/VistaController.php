@@ -84,6 +84,6 @@ class VistaController extends Controller
     {
         $historial=cita::find($id);
         $historial -> delete();
-        return redirect('/historial');
+        return redirect('/historial')->with('eliminar','ok');
     }
 }

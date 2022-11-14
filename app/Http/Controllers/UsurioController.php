@@ -119,7 +119,7 @@ class UsurioController extends Controller
     {
         $usuario=Usuario::find($id);
         $usuario -> delete();
-        return redirect('/usuarios');
+        return redirect('/usuarios')->with('eliminar','ok');
 
     }
 }

@@ -6,7 +6,7 @@ use PhpOption\Option;
 ?>
 @extends('layouts.plantilla')
 
-@section('title', 'Citas')
+@section('title', 'Crear | Cita')
 
 @section('content_header')
     <h1></h1>

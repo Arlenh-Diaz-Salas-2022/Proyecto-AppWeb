@@ -102,6 +102,6 @@ class PsicologoController extends Controller
     {
         $psicologo=psicologo::find($id);
         $psicologo -> delete();
-        return redirect('/psicologos');
+        return redirect('/psicologos')->with('eliminar','ok');
     }
 }

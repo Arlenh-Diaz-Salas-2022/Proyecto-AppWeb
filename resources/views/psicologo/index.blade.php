@@ -35,7 +35,7 @@
                         <td>{{$psicologo->fechana}}</td>
                         <td>{{$psicologo->edad}}</td>
                         <td>
-                            <form action="{{ route('psicologos.destroy',$psicologo->id) }}" method="POST">
+                            <form action="{{ route('psicologos.destroy',$psicologo->id) }}" method="POST" class="formulario-eliminar">
                                 <a href="/psicologos/{{ $psicologo->id }}/edit" class="btn btn-success" >Editar</a>
                                 @csrf
                                 @method('DELETE')
@@ -53,4 +53,35 @@
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+@stop
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('eliminar')== 'ok')
+    <script>
+        Swal.fire(
+            '¡Eliminado!',
+            'El Psicologo se elimino correctamente',
+            'success'
+            )
+    </script>
+@endif
+<script>
+    $('.formulario-eliminar').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+        title: '¿Estas Seguro?',
+        text: "¡El Psicologo se eliminara definitivamente!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: 'green',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Si, eliminar!',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            this.submit();
+        }
+        })
+    });
+</script>
 @stop
